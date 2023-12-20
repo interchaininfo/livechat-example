@@ -1,10 +1,10 @@
 import { StdTx } from '@cosmjs/amino'
-import { decrypt } from '@swiftprotocol/guard-v1'
+import { decrypt, encrypt } from '@swiftprotocol/guard-v1'
 import { EncryptResult } from '@swiftprotocol/guard-v1/types/encryption'
 import axios, { AxiosResponse } from 'axios'
 import { useEffect } from 'react'
 import io from 'socket.io-client'
-import { KeyPair } from './Content.jsx'
+import { KeyPair } from './Content.js'
 
 // Function to generate SHA-256 hash
 function sha256(input: string) {
@@ -72,13 +72,10 @@ const ChatRoom = ({
 
         console.log(msg)
 
-        const encryptResult: AxiosResponse<{ encryptedData: EncryptResult }> =
-          await axios.post('/api/encrypt', {
-            data: msg,
-            recipients: [keyPair.publicKeyHex, ...clients.map((c) => c.pubkey)],
-          })
-
-        const { encryptedData } = encryptResult.data
+        const encryptedData = encrypt({
+          data: msg,
+          recipients: [keyPair.publicKeyHex, ...clients.map((c) => c.pubkey)],
+        })
 
         socket.emit('chatMsgFromClient', JSON.stringify(encryptedData))
 

@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { decrypt } from '@swiftprotocol/guard-v1';
+import { decrypt, encrypt } from '@swiftprotocol/guard-v1';
 import axios from 'axios';
 import { useEffect } from 'react';
 import io from 'socket.io-client';
@@ -54,11 +54,10 @@ const ChatRoom = ({ keyPair, username, walletSignature, }) => {
                 const { clients } = clientsResponse.data;
                 const msg = input.value;
                 console.log(msg);
-                const encryptResult = yield axios.post('/api/encrypt', {
+                const encryptedData = encrypt({
                     data: msg,
                     recipients: [keyPair.publicKeyHex, ...clients.map((c) => c.pubkey)],
                 });
-                const { encryptedData } = encryptResult.data;
                 socket.emit('chatMsgFromClient', JSON.stringify(encryptedData));
                 input.value = '';
             }

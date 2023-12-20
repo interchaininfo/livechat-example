@@ -12,9 +12,9 @@ import { useChain } from '@interchaininfo/sdk';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import chainInfo from '../config.js';
-import ChatRoom from './ChatRoom.jsx';
-import KeyCreate from './KeyCreate.jsx';
-import Spinner from './Spinner.jsx';
+import ChatRoom from './ChatRoom.js';
+import KeyCreate from './KeyCreate.js';
+import Spinner from './Spinner.js';
 const TrollboxContent = () => {
     const [keyPair, setKeyPair] = useState(null);
     const [username, setUsername] = useState(null);

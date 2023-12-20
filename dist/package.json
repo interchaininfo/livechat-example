@@ -1,7 +1,8 @@
 {
 	"name": "@interchaininfo/livechat",
-	"version": "0.1.0-beta.1",
+	"version": "0.1.0-beta.4",
 	"license": "UNLICENSED",
+	"type": "module",
 	"dependencies": {
 		"@cosmjs/amino": "^0.32.2",
 		"@interchaininfo/sdk": "^0.4.2",

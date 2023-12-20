@@ -1,10 +1,7 @@
 {
   "compilerOptions": {
-    "lib": [
-      "es5",
-      "es6",
-      "dom"
-    ],
+    "lib": ["es5", "es6", "dom"],
+    "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
     "target": "es6",
@@ -12,33 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "module": "es2020",
-    "jsx": "preserve",
-    "declaration": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "noEmit": true,
-    "incremental": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true
+    "jsx": "react-jsx",
+    "declaration": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["index.ts", "config.ts", "components/*.ts", "components/*.tsx"],
+  "exclude": ["node_modules", ".next", "public", "dist"]
 }

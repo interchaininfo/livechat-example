@@ -3,9 +3,9 @@ import { useChain } from '@interchaininfo/sdk'
 import axios, { AxiosResponse } from 'axios'
 import { useEffect, useState } from 'react'
 import chainInfo from '../config.js'
-import ChatRoom from './ChatRoom.jsx'
-import KeyCreate from './KeyCreate.jsx'
-import Spinner from './Spinner.jsx'
+import ChatRoom from './ChatRoom.js'
+import KeyCreate from './KeyCreate.js'
+import Spinner from './Spinner.js'
 
 export interface KeyPair {
   privateKeyHex: string

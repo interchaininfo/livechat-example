@@ -1,5 +1,5 @@
 import { StdTx } from '@cosmjs/amino';
-import { KeyPair } from './Content.jsx';
+import { KeyPair } from './Content.js';
 declare const ChatRoom: ({ keyPair, username, walletSignature, }: {
     keyPair: KeyPair;
     username: string;
