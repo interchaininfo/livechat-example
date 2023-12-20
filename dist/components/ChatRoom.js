@@ -8,7 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { decrypt, encrypt } from '@swiftprotocol/guard-v1';
+import decrypt from '@swiftprotocol/guard-v1/helpers/decrypt.js';
+import encrypt from '@swiftprotocol/guard-v1/helpers/encrypt.js';
 import axios from 'axios';
 import { useEffect } from 'react';
 import io from 'socket.io-client';
