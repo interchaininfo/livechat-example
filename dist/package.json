@@ -1,0 +1,14 @@
+{
+	"name": "@interchaininfo/livechat",
+	"version": "0.1.0-beta.1",
+	"license": "UNLICENSED",
+	"dependencies": {
+		"@cosmjs/amino": "^0.32.2",
+		"@interchaininfo/sdk": "^0.4.2",
+		"@keplr-wallet/cosmos": "^0.12.48",
+		"@swiftprotocol/guard-v1": "^0.0.2-alpha01",
+		"axios": "^1.6.2",
+		"semver": "^7.5.4",
+		"socket.io-client": "^4.7.2"
+	}
+}
